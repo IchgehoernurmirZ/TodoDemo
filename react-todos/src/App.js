@@ -1,7 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import TodoRowItem from './components/TodoRowItem';
 
 function App() {
+
+  const todos = [
+    {rowNumber: 1, rowDescription: 'Feed Dog', rowAssigned: 'User One'},
+    {rowNumber: 2, rowDescription: 'Water Plant', rowAssigned: 'User Two'},
+    {rowNumber: 3, rowDescription: 'Make Dinner', rowAssigned: 'User Three'},
+  ]
   return (
     <div className="mt-5 container">
      <div className="card">
@@ -18,16 +24,18 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope='row'>1</th>
-              <td>Feed Dog</td>
-              <td>Eric</td>
-            </tr>
-            <tr>
-              <th scope='row'>2</th>
-              <td>Get Haircut</td>
-              <td>Eric</td>
-            </tr>
+            <TodoRowItem rowNumber={todos[0].rowNumber} 
+              rowDescription={todos[0].rowDescription} 
+              rowAssigned={todos[0].rowAssigned}
+            />
+            <TodoRowItem rowNumber={todos[1].rowNumber} 
+              rowDescription={todos[1].rowDescription} 
+              rowAssigned={todos[1].rowAssigned}
+            />
+            <TodoRowItem rowNumber={todos[2].rowNumber} 
+              rowDescription={todos[2].rowDescription} 
+              rowAssigned={todos[2].rowAssigned}
+            />
           </tbody>
         </table>
       </div>
