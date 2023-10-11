@@ -24,7 +24,15 @@ function App() {
         rowAssigned: assigned
       };
       setTodos(todos => [...todos, newTodo])
-    }
+  }
+
+  const deleteTodo = (deleteTodoRowNumber) => {
+    let filtered = todos.filter((value) => (
+      value.rowNumber !== deleteTodoRowNumber
+    ));
+    setTodos(filtered);
+  }
+
 
 
   return (
@@ -34,8 +42,8 @@ function App() {
         Your Todo's
       </div>
       <div className="card-body">
-          <TodoTable todos={todos}/>
-          <button className="btn btn-primary" onClick={addTodo}>
+          <TodoTable todos={todos} deleteTodo={deleteTodo}/>
+          <button className="btn btn-primary">
             Add New Todo
           </button>
           <NewTodoForm addTodo={addTodo}/>
