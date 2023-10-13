@@ -35,8 +35,6 @@ function App() {
     setTodos(filtered);
   }
 
-
-
   return (
     <div className="mt-5 container">
      <div className="card">
@@ -51,7 +49,6 @@ function App() {
           {showAddTodoForm && 
             <NewTodoForm addTodo={addTodo}/>
           }
-          
       </div>
      </div>
     </div>
