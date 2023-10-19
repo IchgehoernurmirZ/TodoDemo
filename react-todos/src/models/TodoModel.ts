@@ -1,24 +1,28 @@
 class TodoModel {
+
     public get rowNumber(): number {
-        return this._rowNumber;
+        return this.rowNumber;
     }
     public set rowNumber(value: number) {
-        this._rowNumber = value;
+        this.rowNumber = value;
     }
     public get rowDescription(): string {
-        return this._rowDescription;
+        return this.rowDescription;
     }
     public set rowDescription(value: string) {
-        this._rowDescription = value;
+        this.rowDescription = value;
     }
     public get rowAssigned(): string {
-        return this._rowAssigned;
+        return this.rowAssigned;
     }
     public set rowAssigned(value: string) {
-        this._rowAssigned = value;
+        this.rowAssigned = value;
     }
-    constructor(private _rowNumber: number, 
-        private _rowDescription: string,
-        private _rowAssigned: string) {
+    constructor(rowNumber: number, 
+        rowDescription: string,
+        rowAssigned: string) {
+            this.rowNumber = rowNumber;
+            this.rowAssigned = rowAssigned;
+            this.rowDescription = rowDescription;
     }
 }
